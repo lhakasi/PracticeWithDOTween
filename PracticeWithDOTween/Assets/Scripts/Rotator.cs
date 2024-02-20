@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class Rotator : MonoBehaviour
 {
     [SerializeField] private Vector3 _rotateTo;
     [SerializeField] private float _duration;
@@ -9,8 +9,5 @@ public class Rotate : MonoBehaviour
     [SerializeField] private int _repeats;
     [SerializeField] private LoopType _loopType;
 
-    private void Start()
-    {
-        transform.DORotate(_rotateTo, _duration, _rotateMode).SetLoops(_repeats,_loopType).SetEase(Ease.Linear);
-    }
+    private void Start() => transform.DORotate(_rotateTo, _duration, _rotateMode).SetLoops(_repeats,_loopType).SetEase(Ease.Linear);    
 }
